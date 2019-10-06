@@ -1,0 +1,138 @@
+// <HEADER>
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #FACF5F;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: #FF9A24;
+    border-radius: 0 0 50% 50%;
+    transform: scaleX(1.2);
+  }
+  .content{
+    position: relative;
+    justify-content: center;
+    margin: 50px 0;
+    .title{
+      margin: 22px 0px;
+      h3{
+        margin: 20px 0;
+        color: #0038A7;
+        font-size: 26px;
+        text-align: left;
+        letter-spacing: 3px;
+      }
+      p{
+        display:inline;
+        color: #fff;
+        line-height: 22px;
+        text-align: left;
+        background-color: #0038A7;
+        margin: 20px 0;
+      }
+    }
+    .image{
+      text-align: center;
+    }
+  }
+
+}
+// </HEADER>
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .content{
+    margin-top: -60px;
+    position: absolute;
+    height: 80px;
+    width: 240px;
+    background-color: #0038a7;
+    color: #fff;
+
+    p{
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+      padding: 14px 0;
+    }
+  }
+}
+
+// <FORM>
+.form{
+  background-color: #e4e3e1;
+  min-height: 650px;
+  .content{
+    width: 100%;
+    background: #ffffff;
+    margin-top: 15px;
+    border-radius: 4px;
+    p{
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      label{
+        font-size: 14px;
+        color: #444;
+        font-weight: bold;
+         margin-bottom: 8px;
+         span{
+          font-weight: normal;
+          color: #999;
+          font-size: 12px;
+         }
+      }
+      input{
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        height: 40px;
+        padding: 0 15px;
+        font-size: 16px;
+       }
+    }
+  }
+}
+// </FORM>
+
+// TRYNOW
+.trynow{
+  background-color: #FACF5F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px;
+  h2{
+    color: #0038A7;
+  }
+}
+
+
+// INFO
+
+.info{
+  background-color: #e4e3e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px;
+  text-align: justify;
+}
