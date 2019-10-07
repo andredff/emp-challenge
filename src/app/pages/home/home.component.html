@@ -26,7 +26,7 @@
   <div class="container">
     <div class="content">
       <div class="form-box">
-        <form action="">
+        <form [formGroup]='' autocomplete="on">
           <label for="name">Nome Completo *</label>
           <input type="text" for="name" placeholder="Seu nome" />
 
@@ -37,10 +37,30 @@
           <input type="text" for="phone" placeholder="Seu telefone" />
 
           <label for="city">Cidade *</label>
-          <input type="text" for="city" placeholder="Selecione sua cidade" />
+          <!-- <input type="text" [formControl]="queryField" for="city" placeholder="Selecione sua cidade"
+            [(ngModel)]="city" /> -->
+
+          <input type="text" [formControl]="queryField" list="browsers" name="browser">
+          <datalist id="browsers">
+            <option value="{{res.Descricao}}" *ngFor="let res of results">
+          </datalist>
+
+          <!--
+          <ul class="list-group" style="    position: absolute;
+          z-index: 999;
+          background-color: white;
+          width: 240px;
+          border: 1px solid;
+          margin-top: 317px;">
+            <li class="list-group-item test" *ngFor="let res of results">
+              <a (click)="take($event)"> {{ res.Descricao }} </a>
+            </li>
+          </ul> -->
+
 
           <label for="cargo">Cargos *</label>
-          <input type="text" for="cargo" placeholder="Selecione o cargo" />
+          <input type="text" [formControl]="queryFieldJob" for="cargo" placeholder="Selecione o cargo" />
+
 
           <button class="btn" type="submit">CONTINUAR CADASTRO</button>
 
