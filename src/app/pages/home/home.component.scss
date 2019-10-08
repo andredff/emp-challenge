@@ -106,6 +106,31 @@
         padding: 0 15px;
         font-size: 16px;
        }
+       .search-drop-down {
+        position: absolute;
+        min-width: 240px;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 10;
+        background-color: #F6F6F6;
+        font-family: sans-serif;
+        opacity: 0.98;
+        margin-top: -20px;
+
+      }
+
+      .search-results {
+        padding: 10px;
+      }
+
+      .search-results:hover {
+        background: #707070;
+        cursor: pointer;
+      }
+
+      .color-purple {
+        color: #A550BC;
+      }
     }
   }
 }
@@ -144,4 +169,12 @@
     background-color: #FACF5F;
 
   }
+}
+
+
+
+
+
+input.ng-invalid.ng-touched{
+  border: 1px solid #e74c3c !important;
 }

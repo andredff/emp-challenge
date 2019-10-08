@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class HomeService {
 
   baseUrl: string = 'https://www.empregos.com.br/user-controls/hdlSugest2.ashx?t=CE&term=';
-  baseUrl2: string = 'https://www.empregos.com.br/user-controls/hdlSugest2.ashx?t=CE&term=';
+  baseUrl2: string = 'https://www.empregos.com.br/user-controls/hdlSugest2.ashx?t=C&term=';
 
 
   constructor(private http: HttpClient) { }
@@ -18,7 +18,7 @@ export class HomeService {
     return this.http.get(URL);
 }
 
-searcJob(queryString: string): Observable<any> {
+searchJob(queryString: string): Observable<any> {
   let URL = this.baseUrl2 + queryString;
   return this.http.get(URL);
 }

@@ -26,41 +26,39 @@
   <div class="container">
     <div class="content">
       <div class="form-box">
-        <form [formGroup]='' autocomplete="on">
+        <form [formGroup]='form' autocomplete="on">
           <label for="name">Nome Completo *</label>
-          <input type="text" for="name" placeholder="Seu nome" />
+          <input type="text" for="name" placeholder="Seu nome" required/>
 
           <label for="email">E-mail *</label>
-          <input type="text" for="email" placeholder="email@exemplo.com.br" />
+          <input type="text" for="email" placeholder="email@exemplo.com.br" required/>
 
           <label for="phone">Celular *</label>
-          <input type="text" for="phone" placeholder="Seu telefone" />
+          <input type="text" for="phone" placeholder="Seu telefone" required/>
 
           <label for="city">Cidade *</label>
-          <!-- <input type="text" [formControl]="queryField" for="city" placeholder="Selecione sua cidade"
-            [(ngModel)]="city" /> -->
-
-          <input type="text" [formControl]="queryField" list="browsers" name="browser">
-          <datalist id="browsers">
-            <option value="{{res.Descricao}}" *ngFor="let res of results">
-          </datalist>
-
-          <!--
-          <ul class="list-group" style="    position: absolute;
-          z-index: 999;
-          background-color: white;
-          width: 240px;
-          border: 1px solid;
-          margin-top: 317px;">
-            <li class="list-group-item test" *ngFor="let res of results">
-              <a (click)="take($event)"> {{ res.Descricao }} </a>
-            </li>
-          </ul> -->
-
+          <input id='search' placeholder="Digite uma Cidade" autocomplete="off" [formControl]="queryField"
+            formControlName='search' class='input-underline search-bar' type='text'>
+          <div>
+            <div *ngIf='showDropDown' class='search-drop-down'>
+              <div (click)='selectCity(city)' class='search-results' *ngFor="let city of results">
+                <a [innerHTML]="city">
+                </a>
+              </div>
+            </div>
+          </div>
 
           <label for="cargo">Cargos *</label>
-          <input type="text" [formControl]="queryFieldJob" for="cargo" placeholder="Selecione o cargo" />
-
+          <input id='searchjob' placeholder="Digite um cargo" autocomplete="off" [formControl]="queryFieldJob"
+            formControlName='searchjob' class='input-underline search-bar' type='text'>
+          <div>
+            <div *ngIf='showDropDownJobs' class='search-drop-down'>
+              <div (click)='selectJob(jobs)' class='search-results' *ngFor="let jobs of resultsJob">
+                <a [innerHTML]="jobs">
+                </a>
+              </div>
+            </div>
+          </div>
 
           <button class="btn" type="submit">CONTINUAR CADASTRO</button>
 
